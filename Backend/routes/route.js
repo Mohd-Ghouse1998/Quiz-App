@@ -12,7 +12,7 @@ router.post('/create-room',createRoom.createRoom)
 router.get('/get-room',createRoom.getRooms)
 router.get('/get-room/:roomId',createRoom.getRoomById)
 router.post('/join-room/:roomId/:userId',createRoom.enterRoom)
-router.post('/get-questions', gameplayController.sampleQuestions1);
+router.get('/get-questions', gameplayController.sampleQuestions1);
 router.post('/start-game/:roomId/:userId', gameplayController.handleGameplay);
 router.post('/answer-question/:roomId/:userId', gameplayController.answerQuestion);
 

@@ -13,23 +13,17 @@ const server=http.createServer(app)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
-
-
-
-
-
-app.use('/hi', (req, res, next) => {
-  req.io = io; // Attach Socket.IO to the request object
+const io = socketIo(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST'],
+  },
+});
+app.use((req, res, next) => {
+  req.io = io;
   next();
 });
-
-app.listen(process.env.PORT||5000,()=>{
-    console.log(`Express is running on port ${process.env.PORT || 5000}`)
-})
-
-const io=socketIo(server)
-
-//app.use('/api',route)
+app.use('/api',route)
 io.on('connection', (socket) => {
   console.log('A user connected');
 
@@ -49,3 +43,9 @@ io.on('connection', (socket) => {
   
 
 });
+
+
+
+server.listen(process.env.PORT||5000,()=>{
+  console.log(`Express is running on port ${process.env.PORT || 5000}`)
+})

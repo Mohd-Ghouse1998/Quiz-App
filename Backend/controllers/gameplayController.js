@@ -83,7 +83,8 @@ const handleGameplay = async (req, res) => {
     room.questions = questions;
     room.currentQuestionIndex = 0;
     room.scores = {}; // Initialize scores
-
+    console.log("Emitting next-question event with question:", questions[0]);
+    console.log(roomId)
     // Emit the first question to all users in the room
     req.io.to(roomId).emit("next-question", questions[0]);
 
@@ -164,7 +165,7 @@ const answerQuestion = async (req, res) => {
   }
 };
 
-const sampleQuestions1 = () => {
+const sampleQuestions1 =async (req,res) => {
   let sample = [
     {
       question: "What is the capital of France?",
