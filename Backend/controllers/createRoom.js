@@ -142,48 +142,48 @@ const enterRoom = async (req, res) => {
   const { roomId, userId } = req.params;
 
   try {
-    const room = await roomModel.findById(roomId);
+    // const room = await roomModel.findById(roomId);
 
-    if (!room) {
-      return res.status(404).json({ error: 'Room not found' });
-    }
+    // if (!room) {
+    //   return res.status(404).json({ error: 'Room not found' });
+    // }
 
-    if (room.users.length >= 2) {
-      return res.status(400).json({ error: 'Room is full' });
-    }
+    // if (room.users.length >= 2) {
+    //   return res.status(400).json({ error: 'Room is full' });
+    // }
 
-    const user = await userModel.findById(userId);
+    // const user = await userModel.findById(userId);
 
-    if (!user) {
-      return res.status(404).json({ error: 'User not found' });
-    }
+    // if (!user) {
+    //   return res.status(404).json({ error: 'User not found' });
+    // }
 
-    if (user.currentRoom) {
-      return res.status(400).json({ error: 'User is already in a room' });
-    }
+    // if (user.currentRoom) {
+    //   return res.status(400).json({ error: 'User is already in a room' });
+    // }
 
-    // Add the user to the room (update your database logic)
-    room.users.push(userId);
-    await room.save();
+    // // Add the user to the room (update your database logic)
+    // room.users.push(userId);
+    // await room.save();
 
-    // Update the user's currentRoom field
-    user.currentRoom = roomId;
-    await user.save();
+    // // Update the user's currentRoom field
+    // user.currentRoom = roomId;
+    // await user.save();
 
-    // Start the game by selecting random questions
-    const questions = selectRandomQuestions(sampleQuestions);
+    // // Start the game by selecting random questions
+    // const questions = selectRandomQuestions(sampleQuestions);
 
-    // Update the room's game state
-    room.gameInProgress = true;
-    room.questions = questions;
-    room.currentQuestionIndex = 0;
-    room.scores = {}; // Initialize scores
+    // // Update the room's game state
+    // room.gameInProgress = true;
+    // room.questions = questions;
+    // room.currentQuestionIndex = 0;
+    // room.scores = {}; // Initialize scores
 
-    // Emit the first question to all users in the room
-    req.io.to(roomId).emit("next-question", questions[0]);
+    // // Emit the first question to all users in the room
+    // req.io.to(roomId).emit("next-question", questions[0]);
 
-    // Save the room's updated game state
-    await room.save();
+    // // Save the room's updated game state
+    // await room.save();
 
     res.json({ message: 'User entered the room successfully' });
   } catch (error) {
@@ -192,4 +192,5 @@ const enterRoom = async (req, res) => {
 };
 
 
-module.exports={createRoom,getRooms,getRoomById,enterRoom}
+module.exports={createRoom,getRooms,getRoomById,enterRoom,selectRandomQuestions,sampleQuestions}
+
