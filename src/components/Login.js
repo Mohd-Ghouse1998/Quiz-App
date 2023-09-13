@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import './Login.css'
 
 function Login() {
   const [formData, setFormData] = useState({
@@ -35,7 +36,7 @@ let id=data.data.userId
   };
 
   return (
-    <div>
+    <div className="login-container"> {/* Apply the CSS class to the container */}
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input

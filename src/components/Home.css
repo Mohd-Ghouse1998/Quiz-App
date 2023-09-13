@@ -1,0 +1,81 @@
+/* src/components/Home.css */
+
+/* Center the content vertically and horizontally */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height to your preference */
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Background color for the entire page */
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for the Login and Signup components */
+  .auth-form {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Adjust the width to your preference */
+  }
+  
+  .auth-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Style for buttons */
+  .auth-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .auth-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Style for input fields */
+  .auth-form input[type="text"],
+  .auth-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  /* Add more CSS to customize further as needed */
+  /* src/components/Home.css */
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* This will center the content vertically */
+    background-color: #f0f0f0; /* Background color for the entire container */
+  }
+  
+  .welcome-text {
+    font-size: 2rem;
+    color: #007bff; /* Blue color */
+    text-align: center;
+  }
+  
+  /* Add any additional styles you want for the links and forms */
+  

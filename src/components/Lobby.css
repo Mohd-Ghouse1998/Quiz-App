@@ -1,0 +1,79 @@
+/* Lobby.css */
+
+/* Style for the Lobby container */
+.lobby-container {
+    text-align: center;
+  }
+  
+  /* Style for the user name */
+  .user-name {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+  
+  /* Style for the Create Room button */
+  .create-room-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+  
+  /* Style for the list of rooms */
+  .room-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Style for each room card */
+  .room-card {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Style for the room name */
+  .room-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the Join button */
+  .join-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+  }
+  
+
+  /* Home.css */
+
+.lobby-header {
+    background-color: #007bff; /* Background color */
+    color: #fff; /* Text color */
+    padding: 10px; /* Padding around the header */
+    border-bottom: 2px solid #0056b3; /* Bottom border */
+  }
+  
+  .user-name {
+    background-color: #f4f4f4; /* Background color */
+    color: #333; /* Text color */
+    border: 1px solid #ddd; /* Border */
+    padding: 10px; /* Padding around the user name */
+    border-radius: 5px; /* Rounded corners */
+    margin-top: 10px; /* Margin at the top */
+  }
+  
